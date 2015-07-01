@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|captcha|js|css|img|swf|resources)
+#RewriteRule ^(.*)$ /e-learning/index.php/$1 [L]
+RewriteRule ^(.*)$ /hugo/colectores/index.php/$1 [L]

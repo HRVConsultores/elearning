@@ -1,0 +1,299 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Curso Colectores: Toma de muestra para detectar consumo de sustancias</title>
+    
+   
+   <link href='http://fonts.googleapis.com/css?family=Roboto:300,700,400' rel='stylesheet' type='text/css'>      
+        
+    <!-- Bootstrap CSS -->
+    <link href="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+    <link href="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- End Bootstrap CSS -->
+    
+    <link href="http://localhost/cursos/colectores/resources/css/css.css" rel="stylesheet" type="text/css" />   
+    
+    <script type="text/javascript" src="http://localhost/cursos/colectores/resources/js/jquery.js"></script>
+	<script type="text/javascript" src="http://localhost/cursos/colectores/resources/js/jquery.tools.min.js"></script>
+
+	<script type="text/javascript" src="http://localhost/cursos/colectores/resources/js/jquery-ui-1.8.9.custom.min.js"></script>
+    <script type="text/javascript" src="http://localhost/cursos/colectores/resources/js/template.js"></script>
+    <script type="text/javascript" src="http://localhost/cursos/colectores/resources/js/swfobject_modified.js"></script>
+        <link href="http://localhost/cursos/colectores/resources/css/start/jquery-ui-1.8.9.custom.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost/cursos/colectores/resources/css/css_overlay.css" rel="stylesheet" type="text/css" />
+    
+	<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#backlink').hide();
+        navigationLocation('http://localhost/cursos/colectores/',  55);
+        adjustHeight();
+        $('a#b2[title]').tooltip({position:"bottom left",opacity:0.9,tipClass:'navtip'});
+        $("a[rel]").overlay({mask: '#ccc'});
+    });
+    </script>
+    
+    <style>
+     .popover-all {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  z-index: 1010;
+	  display: none;
+	  padding: 5px;
+	  
+	}
+	.popover-all.bottom {
+	  margin-top: 5px ;
+	}
+	
+	.popover-all.bottom .popover-arrow {
+	  top: 0;
+	  left: 50%;
+	  margin-left: -5px ;
+	  border-left: 5px solid transparent ;
+	  border-right: 5px solid transparent ;
+	  border-bottom: 5px solid #000000 ;
+	}
+	
+	.popover-all .popover-arrow {
+	  position: absolute;
+	  width: 0;
+	  height: 0;
+	}
+	
+	.popover-inner {
+	  padding: 3px;
+	  width: 200000px;
+	  overflow: hidden;
+	  background: #000000;
+	  background: rgba(0, 0, 0, 0.8);
+	  -webkit-border-radius: 6px;
+	  -moz-border-radius: 6px;
+	  border-radius: 6px;
+	  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	}
+	.popover-title {
+	  padding: 8px 14px;
+	  margin: 0;
+	  font-size: 14px;
+	  font-weight: normal;
+	  line-height: 18px;
+	  background-color: #f7f7f7;
+	  border-bottom: 1px solid #ebebeb;
+	  -webkit-border-radius: 5px 5px 0 0;
+	     -moz-border-radius: 5px 5px 0 0;
+	          border-radius: 5px 5px 0 0;
+	
+	}
+	
+	.popover-content {
+	  padding: 9px 14px;
+	  background-color: #ffffff;
+	  -webkit-border-radius: 0 0 3px 3px;
+	  -moz-border-radius: 0 0 3px 3px;
+	  border-radius: 0 0 3px 3px;
+	  -webkit-background-clip: padding-box;
+	  -moz-background-clip: padding-box;
+	  background-clip: padding-box;
+	}
+ 
+   </style>
+   
+   <!-- shadowbox -->
+   <link rel="stylesheet" type="text/css" href="http://localhost/cursos/colectores/resources/shadowbox/shadowbox.css">
+   <script type="text/javascript" src="http://localhost/cursos/colectores/resources/shadowbox/shadowbox.js"></script>   
+   <script type="text/javascript">
+		Shadowbox.init({
+			language: 'es',
+			players:  ['img', 'html', 'iframe', 'qt', 'wmp', 'swf', 'flv']
+		});
+	</script>
+    <!-- End shadowbox -->
+   
+   <!-- Carrousel Header -->
+   <script language="JavaScript">   
+		var theImages = new Array()
+		theImages[0] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-00.jpg'
+		theImages[1] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-01.jpg'
+		theImages[2] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-02.jpg'
+		theImages[3] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-03.jpg'
+		theImages[4] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-04.jpg'
+		theImages[4] = 'http://localhost/cursos/colectores/resources/img_curso/carrousel/header-05.jpg'
+		
+		var j = 0
+		var p = theImages.length;
+		var preBuffer = new Array()
+		for (i = 0; i < p; i++){
+			preBuffer[i] = new Image()
+			preBuffer[i].src = theImages[i]
+		}
+		var whichImage = Math.round(Math.random()*(p-1));
+		
+		function showImage(){
+			document.write('<img src="'+theImages[whichImage]+'">');
+		}
+	</script>
+    <!-- End Carrousel Header -->    
+    
+    <!-- Bootstrap JS -->
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/jquery.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-transition.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-alert.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-modal.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-tab.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-popover.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-button.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-collapse.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-carousel.js"></script> 
+    <script src="http://localhost/cursos/colectores/resources/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script> 
+    <!-- Bootstrap JS -->
+</head>    <body>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22428479-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+        <div id="wrapper" align="center">
+            <div id="cuerpo">        
+                <div id="header">
+                    <img class="logo" src="http://localhost/cursos/colectores/resources/img_curso/logos/logo.png" width="462" height="55" alt="Toma de muestra para detectar consumo de sustancias" />
+                                </div>      
+                
+                <div id="breadcrumbs" style="background-color: #E7F7E1;">
+                    <p>Usuario: davidmorenoazua@gmail.com                    /
+                    <a href="http://localhost/cursos/colectores/auth/logout">Cerrar sesión</a><p/>                    
+                </div>  
+                <div id="breadcrumbs">
+                                        
+                    <p><a href="http://localhost/cursos/colectores/home">Inicio</a> &gt; <a href="http://localhost/cursos/colectores/home/pag/32">Módulo 2</a>  &gt; Página 23 / 29</p>
+                </div>
+                <div id="contenido">
+  <h4><span class="tituloModulo"><span class="modulo">Módulo II</span></span></h4>
+  <h1><span class="tituloModulo">Lo que un colector debe saber...</span></h1>
+
+<p>La Dirección del Trabajo a través de una serie de <strong>Dictámenes</strong> ha planteado su parecer sobre el control de alcohol y drogas, destacando entre ellos los siguientes: <br/>
+<div class="alert alert-error" style="float:left; width:900px; margin-right:30px; margin-left:30px; height:300px;">
+        
+<p><table width="90%" border="0" cellpadding="4" cellspacing="4" class="tablaContenidos">
+  <tr>
+    <td colspan="3">Para leer algunos dictámenes  laborales relacionados con el control de alcohol y drogas:</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 8005/323</td>
+    <td>del 11.12.1995</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 8273/337</td>
+    <td>del 19/12/1995</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 287/14</td>
+    <td>del  11/01/1996</td>
+    <td>Obligación  de los trabajadores de someterse a controles de antidrogas</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 6658</td>
+    <td>del 29/11/1996</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 2309/165 </td>
+    <td>del 26/05/1998</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 1560/76 </td>
+    <td>del  26/04/2001</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 3704/134 </td>
+    <td>del 11/08/2004</td>
+    <td>Discriminación</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 2210/035  </td>
+    <td>del 05/06/2009</td>
+    <td>Discriminación</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 3029/044</td>
+    <td>del 12/07/2010</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Ord. Nº 3031/046</td>
+    <td>del 12/07/2010</td>
+    <td>Testeo  de alcohol y drogas</td>
+  </tr>
+  <tr>
+    <td>Ord. N° 3032/47</td>
+    <td>del 12/07/2010</td>
+    <td>Legislación  sobre el control de drogas y alcohol en el trabajo</td>
+  </tr>
+</table>
+
+</p>
+</div>
+
+</p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                
+                                <div>
+                <span class="label label-success">Avance de la unidad:</span>     
+                <br /><br />
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style="width: 79%">
+                    <span class="sr-only">79%</span>
+                  </div>
+                </div>  
+                </div>    
+                            </div> 
+            <script>
+$(function () {
+		$('#popover').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover1').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover2').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover3').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover4').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover5').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover6').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover7').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover8').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover9').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+		$('#popover10').popover({ placement:'bottom', html:'true', trigger: 'hover',delay: {show: 100, hide: 300}});
+    });
+$('[rel=tooltip]').tooltip({ placement: 'top', html: 'true', container: 'body' })
+swfobject.registerObject("FlashID");
+</script>
+
+<div id="footer">
+	<img class="logos_footer"src="http://localhost/cursos/colectores/resources/img_curso/logos/logos.png" width="485" height="43" />
+	<div id="navegacion">
+		<div id="bot_home"><a href="http://localhost/cursos/colectores/home/pag/index" class="browse home" title="Volver al menú"> </a></a></div>
+		<div id="bot_prev"><a class="prev browse left" title="Anterior" href="#"></a></div>
+		<div id="bot_next"><a class="next browse right" title="Siguiente" href="#"></a></div>
+	</div>	
+</div>            
+        </div>
+    </body>
+</html>

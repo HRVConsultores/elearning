@@ -1,0 +1,7 @@
+<div id="contenido">
+  
+  <h2><span class="subtitulo"><img src="<?php echo base_url(IMAGES_U."m02/01.png") ?>" alt="Programa" class="foto_der_borderless" width="169" height="260" /><span class="label">1.-</span> Tiempos de permanencia de las drogas en el organismo
+</span></h2>
+<p>Las drogas tienen una cantidad de tiempo después  de la ingestión, durante el cual las pruebas o test rápidos pueden detectarla.  Aunque  los tiempos de permanencia pueden  ser de conocimiento público, no es prudente dar a conocer estas ventanas de  tiempo que invite a las personas que consumen drogas, a jugar con estos  límites, en la aplicación de los test de drogas.</p>
+<p class="alert alert-info" style="margin-top:60px;"><img src="<?php echo base_url(IMAGES_U."m02/02.png") ?>" width="927" height="276" align="left" style="margin-top:-60px; margin-right:10px;" />Por ejemplo el alcohol se absorbe y se elimina más rápidamente que otras drogas, por lo anterior, después de  incidentes o accidentes, habitualmente se solicita examen de alcohol dentro de  las siguientes dos horas de ocurrido el evento.<br/> 
+  <a href="http://www.disfrutadeunconsumoresponsable.com/comprender/consumo-responsable.aspx" target="_blank">Vea aquí infografía del circuito del alcohol en el cuerpo humano</a>. <br /></p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

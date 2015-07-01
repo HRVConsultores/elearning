@@ -1,0 +1,39 @@
+/*CSS Document*/
+.simple_overlay
+{
+/*must be initially hidden*/
+	display: none;
+/*texto*/
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333;
+/*place overlay on top of other elements*/
+	z-index: 10000;
+/*styling*/
+	background-color: #FFF;
+	width: 600px;
+	min-height: 200px;
+	border: 1px solid #666;
+	padding: 18px;
+/*CSS3 styling for latest browsers*/
+	-moz-box-shadow: 0 0 30px 5px #000;
+	-webkit-box-shadow: 0 0 30px #000;
+	text-align: left;
+}
+.simple_overlay P
+{
+	font-size: 12px;
+}
+/*close button positioned on upper right corner*/
+.simple_overlay .close
+{
+	background-image: url(../img_gen/close.png);
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+	opacity: 3.0;
+}
