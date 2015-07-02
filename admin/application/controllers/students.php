@@ -128,49 +128,15 @@ class Students extends SB_Controller
 		
 		$rules = $this->validateForm();
 
-		if($this->input->post('identitynumber') !='')
-		{
-			$rules = array( 
-				array('field'=>'identitynumber','label'=>'Número de Identidad','rules'=>'required|is_unique[sc_student.identitynumber]')
-			);			
-		}
-		if($this->input->post('name') !='')
-		{
-			$rules = array( 
-				array('field'=>'name','label'=>'Nombre','rules'=>'required|max_length[100]')				
-			);			
-		}
-		if($this->input->post('fatherlastname') !='')
-		{
-			$rules = array( 
-				array('field'=>'fatherlastname','label'=>'Apellido 1','rules'=>'required|max_length[100]')			
-			);			
-		}
-		if($this->input->post('motherlastname') !='')
-		{
-			$rules = array( 
-				array('field'=>'motherlastname','label'=>'Apellido 2','rules'=>'max_length[100]')			
-			);			
-		}
-		if($this->input->post('email') !='')
-		{
-			$rules = array( 
-				array('field'=>'email','label'=>'Email','rules'=>'required|valid_email|max_length[50]|is_unique[sc_student.email]')				
-			);			
-		}
-		if($this->input->post('coursepassword') !='')
-		{
-			$rules = array( 
-				array('field'=>'coursepassword','label'=>'Password','rules'=>'required|min_length[6]'),
-				array('field'=>'coursepassword_confirmation','label'=>'password confirmation','rules'=>'required|matches[coursepassword]')
-			);			
-		}		
-		if($this->input->post('courseusername') !='')
-		{
-			$rules = array( 
-				array('field'=>'courseusername','label'=>'Usuario ','rules'=>'required|min_length[6]|is_unique[sc_student.courseusername]')				
-			);			
-		}
+		$rules = array( 
+			array('field'=>'identitynumber','label'=>'Número de Identidad','rules'=>'required|is_unique[sc_student.identitynumber]'),
+			array('field'=>'name','label'=>'Nombre','rules'=>'required|max_length[100]'),
+			array('field'=>'fatherlastname','label'=>'Apellido 1','rules'=>'required|max_length[100]'),
+			array('field'=>'motherlastname','label'=>'Apellido 2','rules'=>'max_length[100]'),
+			array('field'=>'email','label'=>'Email','rules'=>'required|valid_email|max_length[50]|is_unique[sc_student.email]'),
+			array('field'=>'courseusername','label'=>'Usuario','rules'=>'required|min_length[6]|is_unique[sc_student.courseusername]'),
+			array('field'=>'coursepassword','label'=>'Password','rules'=>'required|min_length[6]')
+		);	
 
 		$this->form_validation->set_rules( $rules );
 		if( $this->form_validation->run() )

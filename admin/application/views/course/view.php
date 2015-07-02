@@ -26,12 +26,6 @@
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Coursetypeid</td>
-						<td><?php echo $row['coursetypeid'] ;?> </td>
-						
-					</tr>
-				
-					<tr>
 						<td width='30%' class='label-view text-right'>Código</td>
 						<td><?php echo $row['code'] ;?> </td>
 						
@@ -44,25 +38,19 @@
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Shortdescription</td>
-						<td><?php echo $row['shortdescription'] ;?> </td>
-						
-					</tr>
-				
-					<tr>
 						<td width='30%' class='label-view text-right'>Longdescription</td>
 						<td><?php echo $row['longdescription'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>URL</td>
+						<td width='30%' class='label-view text-right'>Url</td>
 						<td><?php echo $row['url'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Incio</td>
+						<td width='30%' class='label-view text-right'>Inicio</td>
 						<td><?php echo $row['startdate'] ;?> </td>
 						
 					</tr>
@@ -80,7 +68,7 @@
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Created At</td>
+						<td width='30%' class='label-view text-right'>Creación</td>
 						<td><?php echo $row['created_at'] ;?> </td>
 						
 					</tr>

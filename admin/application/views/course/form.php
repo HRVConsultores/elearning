@@ -74,9 +74,9 @@
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="URL" class=" control-label col-md-4 text-left"> URL <span class="asterix"> * </span></label>
+									<label for="Link del curso" class=" control-label col-md-4 text-left"> Link del curso <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['url'];?>' name='url'  required parsley-type='url'  /> <br />
+									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['url'];?>' name='url'  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
@@ -85,7 +85,7 @@
 									<div class="col-md-8">
 									  
 				<input type='text' class='form-control date' placeholder='' value='<?php echo $row['startdate'];?>' name='startdate'
-				style='width:150px !important;'	  'required parsley-type='dateIso'  /> <br />
+				style='width:150px !important;'	  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
@@ -94,7 +94,7 @@
 									<div class="col-md-8">
 									  
 				<input type='text' class='form-control date' placeholder='' value='<?php echo $row['enddate'];?>' name='enddate'
-				style='width:150px !important;'	  'required parsley-type='dateIso'  /> <br />
+				style='width:150px !important;'	  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> </fieldset>

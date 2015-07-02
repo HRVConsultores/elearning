@@ -128,6 +128,10 @@ class Course extends SB_Controller
 		
 		$rules = $this->validateForm();
 
+		$rules = array( 
+			array('field'=>'code','label'=>'Código','rules'=>'required|max_length[30]|is_unique[sc_course.code]')
+		);	
+
 		$this->form_validation->set_rules( $rules );
 		if( $this->form_validation->run() )
 		{
