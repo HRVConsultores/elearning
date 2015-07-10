@@ -14,8 +14,7 @@
 | path to your installation.
 |
 */
-#$config['base_url']	= 'http://www.globalpartners.cl/e-learning/';
-$config['base_url']	= 'http://localhost/hugo/colectores/';
+$config['base_url']	= 'http://localhost/hugo/elearning/colectores/';
 
 /*
 |--------------------------------------------------------------------------

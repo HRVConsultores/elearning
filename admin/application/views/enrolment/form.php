@@ -101,7 +101,7 @@ $(document).ready(function() {
 		$("#courseId").jCombo("<?php echo site_url('enrolment/comboselect?filter=sc_course:id:code|name') ?>",
 		{  selected_value : '<?php echo $row["courseId"] ?>' });
 		
-		$("#sc_Student_id").jCombo("<?php echo site_url('enrolment/comboselect?filter=sc_student:id:name|fatherlastname|motherlastname') ?>",
+		$("#sc_Student_id").jCombo("<?php echo site_url('enrolment/comboselect?filter=tb_users:id:id|first_name|last_name') ?>",
 		{  selected_value : '<?php echo $row["sc_Student_id"] ?>' });
 		 	 
 });

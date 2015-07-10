@@ -27,7 +27,7 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>Estudiante</td>
-						<td><?php echo SiteHelpers::gridDisplayView($row['sc_Student_id'],'sc_Student_id','1:sc_student:id:id|name|fatherlastname') ;?> </td>
+						<td><?php echo SiteHelpers::gridDisplayView($row['sc_Student_id'],'sc_Student_id','1:tb_users:id:id') ;?> </td>
 						
 					</tr>
 				

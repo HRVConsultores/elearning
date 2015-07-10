@@ -52,7 +52,7 @@ define('SWF','resources/swf/');
 define('DOC','resources/doc/');
 define('UPLOAD','resources/upload/');
 
-define('OFFLINE','http://www.rlc.fao.org/cursos/sc/offline/');
+define('HRV','http://localhost/hugo/elearning/admin/user/login');
 
 /**Examen*/
 define('PORCENTAJE_APROBACION', 85);

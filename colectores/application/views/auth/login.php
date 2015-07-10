@@ -21,7 +21,7 @@
 			<?php echo form_submit('submit', 'Ingresar', 'class="boton_login"');?>
 		</div>     
 		<div id="ingresar">
-			<?php echo anchor('http://www.rlc.fao.org/cursos/postulaciones/passwordcursos','¿Olvidó su contraseña?','target="_blank"');?>
+			<?php echo anchor(HRV,'¿Olvidó su contraseña?','target="_blank"');?>
 		</div>     
       <?php echo form_close();?>
       

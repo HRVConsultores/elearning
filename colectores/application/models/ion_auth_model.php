@@ -284,9 +284,10 @@ class Ion_auth_model extends CI_Model
 		                  ->limit(1)
 		                  ->get($this->tables['users']);
 	*/
-		$query = $this->db->query("select s.coursepassword as password from sc_student s
+		/*$query = $this->db->query("select s.coursepassword as password from sc_student s
+																		where s.id = '".$id."' limit 1");*/
+		$query = $this->db->query("select s.password as password from tb_users s
 																		where s.id = '".$id."' limit 1");
-	
 	
 		$hash_password_db = $query->row();
 
@@ -314,10 +315,11 @@ class Ion_auth_model extends CI_Model
 		else
 		{
 			//$salt = substr($hash_password_db->password, 0, $this->salt_length);
-			$salt = $this->saltValue;
+			//$salt = $this->saltValue;
 
 			//$db_password =  $salt . substr(sha1($salt . $password), 0, -$this->salt_length);
 			$db_password =  md5($password.$salt);
+			$db_password =  md5($password);
 		}
 
 		if($db_password == $hash_password_db->password)
@@ -853,6 +855,7 @@ class Ion_auth_model extends CI_Model
 	 **/
 	public function login($identity, $password, $remember=FALSE)
 	{
+
 		$this->trigger_events('pre_login');
 
 		if (empty($identity) || empty($password))
@@ -863,15 +866,16 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
+		$query = $this->db->query("select s.email as username, s.email, s.id, s.password, s.active as active, c.id as courseId, s.first_name as first_name, s.last_name as last_name from pv_enrolment e
+																		inner join sc_course c on e.courseId = c.id		
+																		inner join tb_users s on e.sc_student_id = s.id																
+																		where s.email = '".$this->db->escape_str($identity)."' and c.code = '".$this->cursoActivo."' limit 1");
+
+
 		/*$query = $this->db->query("select s.courseusername as username, s.email, s.id, s.coursepassword, s.valid as active, c.id as courseId, s.name as first_name, concat(s.fatherlastname,' ',s.motherlastname) as last_name from pv_enrolment e
-																		inner join sc_course c on e.courseId = c.id
-																		inner join sc_User u on e.userId = u.id
-																		inner join sc_student s on u.idstudent = s.id
-																		where s.courseusername = '".$this->db->escape_str($identity)."' and c.code = '".$this->cursoActivo."' limit 1");*/
-		$query = $this->db->query("select s.courseusername as username, s.email, s.id, s.coursepassword, s.valid as active, c.id as courseId, s.name as first_name, concat(s.fatherlastname,' ',s.motherlastname) as last_name from pv_enrolment e
 																		inner join sc_course c on e.courseId = c.id		
 																		inner join sc_student s on e.sc_student_id = s.id																
-																		where s.courseusername = '".$this->db->escape_str($identity)."' and c.code = '".$this->cursoActivo."' limit 1");
+																		where s.courseusername = '".$this->db->escape_str($identity)."' and c.code = '".$this->cursoActivo."' limit 1");*/
 
 		if($this->is_time_locked_out($identity))
 		{
@@ -903,12 +907,12 @@ class Ion_auth_model extends CI_Model
 				$session_data = array(
 				    'identity'             => $user->{$this->identity_column},
 				    'username'             => $user->username,
-				    'first_name'				   => $user->first_name,
+				    'first_name'		   => $user->first_name,
 				    'last_name'			   => $user->last_name,
 				    'email'                => $user->email,
 				    'user_id'              => $user->id, //everyone likes to overwrite id so we'll use user_id
 				    'old_last_login'       => $user->last_login,
-				    'courseId'       			 => $user->courseId
+				    'courseId'       	   => $user->courseId
 				);
 
 				$this->update_last_login($user->id);
@@ -1276,7 +1280,9 @@ class Ion_auth_model extends CI_Model
 
 		//if no id was passed use the current users id
 		$id || $id = $this->session->userdata('user_id');
-		$query = $this->db->query("select * from sc_student 
+		/*$query = $this->db->query("select * from sc_student 
+																		where id = '".$id."' limit 1");*/
+		$query = $this->db->query("select * from tb_users 
 																		where id = '".$id."' limit 1");
 
 		return $query;
@@ -1550,7 +1556,8 @@ class Ion_auth_model extends CI_Model
 		$this->trigger_events('extra_where');
 
 		//$this->db->update($this->tables['users'], array('last_login' => time()), array('id' => $id));
-		$query = $this->db->query("update sc_student set last_login = '".time()."' where id = '".$id."'");
+		//$query = $this->db->query("update sc_student set last_login = '".time()."' where id = '".$id."'");
+		$query = $this->db->query("update tb_users set last_login = '".time()."' where id = '".$id."'");
 		
 		return $this->db->affected_rows() == 1;
 	}
@@ -1604,7 +1611,8 @@ class Ion_auth_model extends CI_Model
 		$salt = sha1($user->coursepassword);
 
 		//$salt = sha1($user->password);
-		$this->db->query("update sc_student set remember_code = '$salt'  where id = $id");
+		//$this->db->query("update sc_student set remember_code = '$salt'  where id = $id");
+		$this->db->query("update tb_users set remember_token = '$salt'  where id = $id");
 		//$this->db->update($this->tables['users'], array('remember_code' => $salt), array('id' => $id));
 
 		if ($this->db->affected_rows() > -1)

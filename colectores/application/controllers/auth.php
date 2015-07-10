@@ -59,7 +59,6 @@ class Auth extends CI_Controller {
 			//check to see if the user is logging in
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
-
 			if (($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)))
 			{
 				//if the login is successful
@@ -69,7 +68,8 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				//if the login was un-successful
+				//echo  $this->db->last_query();;
+					//if the login was un-successful
 				//redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
 				redirect('auth/login', 'refresh'); //use redirects instead of loading views for compatibility with MY_Controller libraries

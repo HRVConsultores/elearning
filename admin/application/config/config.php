@@ -15,7 +15,6 @@
 |
 */
 $config['base_url']	= 'http://localhost/hugo/elearning/admin/';
-#$config['base_url']	= 'http://www.globalpartners.cl/admin';
 
 /*
 |--------------------------------------------------------------------------

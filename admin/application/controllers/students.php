@@ -125,7 +125,6 @@ class Students extends SB_Controller
 	}
 	
 	function save() {
-		
 		$rules = $this->validateForm();
 
 		$rules = array( 

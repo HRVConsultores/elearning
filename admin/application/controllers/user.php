@@ -186,6 +186,7 @@ class User extends SB_controller {
 			if( $this->session->userdata("_POST_DATA")){
 				$this->data = array_merge( $this->data , $this->session->userdata("_POST_DATA"));
 				$this->session->unset_userdata('_POST_DATA');
+
 			}
 
 			$this->data['content'] = $this->load->view('user/register',$this->data, true );
@@ -199,7 +200,7 @@ class User extends SB_controller {
 	public function create() {
 
 		// check for captcha here
-		if( CNF_RECAPTCHA ){
+		/*if( CNF_RECAPTCHA ){
 			$this->load->library('recaptcha');
 			$this->recaptcha->recaptcha_check_answer() ;
 			if( ! ($this->recaptcha->getIsValid() )){
@@ -207,9 +208,9 @@ class User extends SB_controller {
 				$this->session->set_userdata(array(
 					'_POST_DATA' => $_POST,
 				));
-				redirect("user/create");
+				//redirect("user/create");
 			} 
-		}
+		}*/
 
 
 
@@ -222,7 +223,7 @@ class User extends SB_controller {
 		);
 
 		$this->form_validation->set_rules( $rules );
-		if( $this->form_validation->run() && $this->recaptcha->getIsValid() ){
+		if( $this->form_validation->run() /*&& $this->recaptcha->getIsValid()*/ ){
 			$code = rand(10000,10000000);
 			$authen = array(
 				'first_name'	=> $this->input->post('firstname',true),
