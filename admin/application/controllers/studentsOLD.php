@@ -94,7 +94,7 @@ class Students extends SB_Controller
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_users'); 
+			$this->data['row'] = $this->model->getColumnTable('sc_student'); 
 		}
 		
 		$this->data['id'] = $id;
@@ -115,7 +115,7 @@ class Students extends SB_Controller
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_users'); 
+			$this->data['row'] = $this->model->getColumnTable('sc_student'); 
 		}
 	
 		$this->data['id'] = $id;
@@ -125,23 +125,31 @@ class Students extends SB_Controller
 	}
 	
 	function save() {
-		
 		$rules = $this->validateForm();
 
-		if($this->input->post('password') !='')
-		{
-			$rules = array( 				
-				array('field'=>'email','label'=>'Email','rules'=>'required|valid_email|max_length[50]|is_unique[tb_users.email]'),
-				array('field'=>'password','label'=>'Password','rules'=>'required'),
-				array('field'=>'password_confirmation','label'=>'password confirmation','rules'=>'required|matches[password]')
-			);
-			
-		}
+		$rules = array( 
+			array('field'=>'identitynumber','label'=>'Número de Identidad','rules'=>'required|is_unique[sc_student.identitynumber]'),
+			array('field'=>'name','label'=>'Nombre','rules'=>'required|max_length[100]'),
+			array('field'=>'fatherlastname','label'=>'Apellido 1','rules'=>'required|max_length[100]'),
+			array('field'=>'motherlastname','label'=>'Apellido 2','rules'=>'max_length[100]'),
+			array('field'=>'email','label'=>'Email','rules'=>'required|valid_email|max_length[50]|is_unique[sc_student.email]'),
+			array('field'=>'courseusername','label'=>'Usuario','rules'=>'required|min_length[6]|is_unique[sc_student.courseusername]'),
+			array('field'=>'coursepassword','label'=>'Password','rules'=>'required|min_length[6]')
+		);	
 
 		$this->form_validation->set_rules( $rules );
 		if( $this->form_validation->run() )
 		{
 			$data = $this->validatePost();
+
+			if($this->input->post('coursepassword') !='')
+			{
+				$data['coursepassword'] = md5(trim($this->input->post('coursepassword').SALT));
+			}
+
+			$data['created_at'] = date('Y-m-d H:i:s');
+			$data['updated_at'] = date('Y-m-d H:i:s');
+
 			$ID = $this->model->insertRow($data , $this->input->get_post( 'id' , true ));
 			// Input logs
 			if( $this->input->get( 'id' , true ) =='')

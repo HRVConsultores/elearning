@@ -1,9 +1,9 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Studentsmodel extends SB_Model 
+class Availablemodel extends SB_Model 
 {
 
-	public $table = 'tb_users';
+	public $table = 'pv_enrolment';
 	public $primaryKey = 'id';
 
 	public function __construct() {
@@ -14,11 +14,11 @@ class Studentsmodel extends SB_Model
 	public static function querySelect(  ){
 		
 		
-		return "   SELECT tb_users.* FROM tb_users   ";
+		return "  SELECT DISTINCT pv_enrolment.* FROM pv_enrolment LEFT JOIN sc_course ON sc_course.id = pv_enrolment.courseId  ";
 	}
 	public static function queryWhere(  ){
 		
-		return "  WHERE tb_users.id IS NOT NULL AND group_id = 3   ";
+		return " WHERE pv_enrolment.id IS NOT NULL AND sc_course.valid = 'Y'   ";
 	}
 	
 	public static function queryGroup(){

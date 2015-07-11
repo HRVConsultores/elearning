@@ -9,8 +9,6 @@ $route["contact-us"] = "page/index/contact-us";
 $route["contact-us/(:any)"] = "page/index/contact-us/%1";
 $route["faq"] = "page/index/faq";
 $route["faq/(:any)"] = "page/index/faq/%1";
-$route["courses"] = "page/index/courses";
-$route["courses/(:any)"] = "page/index/courses/%1";
-$route["register"] = "page/index/register";
-$route["register/(:any)"] = "page/index/register/%1";
+$route["porpolio"] = "page/index/porpolio";
+$route["porpolio/(:any)"] = "page/index/porpolio/%1";
 ?>

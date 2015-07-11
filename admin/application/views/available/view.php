@@ -6,7 +6,7 @@
 		</div>
 		<ul class="breadcrumb">
 			<li><a href="<?php echo site_url('dashboard') ?>">Dashboard</a></li>
-			<li><a href="<?php echo site_url('students') ?>"><?php echo $pageTitle ?></a></li>
+			<li><a href="<?php echo site_url('available') ?>"><?php echo $pageTitle ?></a></li>
 			<li class="active"> Detail </li>
 		</ul>
 	</div>  
@@ -20,50 +20,44 @@
 						<tbody>	
 					
 					<tr>
-						<td width='30%' class='label-view text-right'>Matrícula</td>
+						<td width='30%' class='label-view text-right'>Id</td>
 						<td><?php echo $row['id'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Email</td>
-						<td><?php echo $row['email'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Sc Student Id</td>
+						<td><?php echo $row['sc_Student_id'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Nombre</td>
-						<td><?php echo $row['first_name'] ;?> </td>
+						<td width='30%' class='label-view text-right'>CourseId</td>
+						<td><?php echo $row['courseId'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Apellidos</td>
-						<td><?php echo $row['last_name'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Finalscore</td>
+						<td><?php echo $row['finalscore'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Avatar</td>
-						<td><?php echo $row['avatar'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Comment</td>
+						<td><?php echo $row['comment'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Activo</td>
-						<td><?php echo $row['active'] ;?> </td>
+						<td width='30%' class='label-view text-right'>EnrolmentStatus</td>
+						<td><?php echo $row['enrolmentStatus'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Login Attempt</td>
-						<td><?php echo $row['login_attempt'] ;?> </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>Last Login</td>
-						<td><?php echo $row['last_login'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Valid</td>
+						<td><?php echo $row['valid'] ;?> </td>
 						
 					</tr>
 				

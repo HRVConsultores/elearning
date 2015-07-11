@@ -25,9 +25,8 @@
 		 parsley-validate='true' novalidate='true' method="post" enctype="multipart/form-data" > 
 
 
-<ul class="nav nav-tabs"><li class="active"><a href="#DatosPersonales" data-toggle="tab">Datos Personales</a></li>
-				<li class=""><a href="#Cuenta" data-toggle="tab">Cuenta</a></li>
-				</ul><div class="tab-content"><div class="tab-pane m-t active" id="DatosPersonales"> 
+<div class="col-md-12">
+						<fieldset><legend> Students</legend>
 									
 								  <div class="form-group hidethis " style="display:none;">
 									<label for="Id" class=" control-label col-md-4 text-left"> Id </label>
@@ -37,74 +36,79 @@
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="Número de Identidad" class=" control-label col-md-4 text-left"> Número de Identidad <span class="asterix"> * </span></label>
+									<label for="Grupo" class=" control-label col-md-4 text-left"> Grupo <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['identitynumber'];?>' name='identitynumber'  required /> <br />
+									  
+					<?php $group_id = explode(',',$row['group_id']);
+					$group_id_opt = array( '3' => 'Estudiante' , ); ?>
+					<select name='group_id' rows='5' required  class='select2 '  > 
+						<?php 
+						foreach($group_id_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['group_id'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> <br />
+									  <i> <small></small></i>
+									 </div> 
+								  </div> 					
+								  <div class="form-group  " >
+									<label for="Username" class=" control-label col-md-4 text-left"> Username </label>
+									<div class="col-md-8">
+									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['username'];?>' name='username'   /> <br />
+									  <i> <small></small></i>
+									 </div> 
+								  </div> 							  				
+								  <div class="form-group  " >
+									<label for="Email" class=" control-label col-md-4 text-left"> Email <span class="asterix"> * </span></label>
+									<div class="col-md-8">
+									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['email'];?>' name='email'  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
 									<label for="Nombre" class=" control-label col-md-4 text-left"> Nombre <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['name'];?>' name='name'  required /> <br />
+									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['first_name'];?>' name='first_name'  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="Apellido 1" class=" control-label col-md-4 text-left"> Apellido 1 <span class="asterix"> * </span></label>
+									<label for="Apellidos" class=" control-label col-md-4 text-left"> Apellidos <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['fatherlastname'];?>' name='fatherlastname'  required /> <br />
+									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['last_name'];?>' name='last_name'  required /> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="Apellido 2" class=" control-label col-md-4 text-left"> Apellido 2 </label>
-									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['motherlastname'];?>' name='motherlastname'   /> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="E-mail" class=" control-label col-md-4 text-left"> E-mail <span class="asterix"> * </span></label>
-									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['email'];?>' name='email'  required parsley-type='email'  /> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Género" class=" control-label col-md-4 text-left"> Género </label>
+									<label for="Active" class=" control-label col-md-4 text-left"> Active <span class="asterix"> * </span></label>
 									<div class="col-md-8">
 									  
-					<?php $gender = explode(',',$row['gender']);
-					$gender_opt = array( 'H' => 'Masculino' ,  'M' => 'Femenino' , ); ?>
-					<select name='gender' rows='5'   class='select2 '  > 
-						<?php 
-						foreach($gender_opt as $key=>$val)
-						{
-							echo "<option  value ='$key' ".($row['gender'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
-						}						
-						?></select> <br />
+					<label class='radio radio-inline'>
+					<input type='radio' name='active' value ='0' required <?php if($row['active'] == '0') echo 'checked="checked"';?> > Inactive </label>
+					<label class='radio radio-inline'>
+					<input type='radio' name='active' value ='1' required <?php if($row['active'] == '1') echo 'checked="checked"';?> > Active </label> <br />
 									  <i> <small></small></i>
 									 </div> 
-								  </div> 
-			</div>
+								  </div> </fieldset>
+								  <fieldset>
+				<legend><?php echo $this->lang->line('core.password'); ?> </legend>
+				  <div class="form-group">
+					<label for="ipt" class=" control-label col-md-4"><?php echo $this->lang->line('core.password'); ?> </label>
+					<div class="col-md-8">
+					<input name="password" type="password" id="password" class="form-control input-sm" value="" style="width:50% !important;"
+					<?php if($row['id'] =='')echo 'required'; ?>/>   
+					 </div> 
+				  </div>  
+				  
+				  <div class="form-group">
+					<label for="ipt" class=" control-label col-md-4"><?php echo $this->lang->line('core.repassword'); ?> </label>
+					<div class="col-md-8">
+					<input name="password_confirmation" type="password" id="password_confirmation" class="form-control input-sm" style="width:50% !important;"
+					<?php if($row['id'] =='')echo 'required'; ?>/>  
+					 </div> 
+				  </div>				
 			
-			<div class="tab-pane m-t " id="Cuenta"> 
-									
-								  <div class="form-group  " >
-									<label for="Usuario" class=" control-label col-md-4 text-left"> Usuario <span class="asterix"> * </span></label>
-									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['courseusername'];?>' name='courseusername'  required /> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Contraseña" class=" control-label col-md-4 text-left"> Contraseña </label>
-									<div class="col-md-8">
-									  <input type='text' class='form-control' placeholder='' value='<?php echo $row['coursepassword'];?>' name='coursepassword'   /> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 
+			</fieldset>
 			</div>
 			
 			

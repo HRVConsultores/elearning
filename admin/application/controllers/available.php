@@ -1,24 +1,24 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Students extends SB_Controller 
+class Available extends SB_Controller 
 {
 
 	protected $layout 	= "layouts/main";
-	public $module 		= 'students';
+	public $module 		= 'available';
 	public $per_page	= '10';
 
 	function __construct() {
 		parent::__construct();
 		
-		$this->load->model('studentsmodel');
-		$this->model = $this->studentsmodel;
+		$this->load->model('availablemodel');
+		$this->model = $this->availablemodel;
 		
 		$this->info = $this->model->makeInfo( $this->module);
 		$this->access = $this->model->validAccess($this->info['id']);	
 		$this->data = array_merge( $this->data, array(
 			'pageTitle'	=> 	$this->info['title'],
 			'pageNote'	=>  $this->info['note'],
-			'pageModule'	=> 'students',
+			'pageModule'	=> 'available',
 		));
 		
 		if(!$this->session->userdata('logged_in')) redirect('user/login',301);
@@ -74,7 +74,7 @@ class Students extends SB_Controller
 		$this->data['access']		= $this->access;
 		// Render into template
 		
-		$this->data['content'] = $this->load->view('students/index',$this->data, true );
+		$this->data['content'] = $this->load->view('available/index',$this->data, true );
 		
     	$this->load->view('layouts/main', $this->data );
     
@@ -94,11 +94,11 @@ class Students extends SB_Controller
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_users'); 
+			$this->data['row'] = $this->model->getColumnTable('pv_enrolment'); 
 		}
 		
 		$this->data['id'] = $id;
-		$this->data['content'] =  $this->load->view('students/view', $this->data ,true);	  
+		$this->data['content'] =  $this->load->view('available/view', $this->data ,true);	  
 		$this->load->view('layouts/main',$this->data);
 	}
   
@@ -115,11 +115,11 @@ class Students extends SB_Controller
 		{
 			$this->data['row'] =  $row;
 		} else {
-			$this->data['row'] = $this->model->getColumnTable('tb_users'); 
+			$this->data['row'] = $this->model->getColumnTable('pv_enrolment'); 
 		}
 	
 		$this->data['id'] = $id;
-		$this->data['content'] = $this->load->view('students/form',$this->data, true );		
+		$this->data['content'] = $this->load->view('available/form',$this->data, true );		
 	  	$this->load->view('layouts/main', $this->data );
 	
 	}
@@ -127,16 +127,6 @@ class Students extends SB_Controller
 	function save() {
 		
 		$rules = $this->validateForm();
-
-		if($this->input->post('password') !='')
-		{
-			$rules = array( 				
-				array('field'=>'email','label'=>'Email','rules'=>'required|valid_email|max_length[50]|is_unique[tb_users.email]'),
-				array('field'=>'password','label'=>'Password','rules'=>'required'),
-				array('field'=>'password_confirmation','label'=>'password confirmation','rules'=>'required|matches[password]')
-			);
-			
-		}
 
 		$this->form_validation->set_rules( $rules );
 		if( $this->form_validation->run() )
@@ -154,9 +144,9 @@ class Students extends SB_Controller
 			$this->session->set_flashdata('message',SiteHelpers::alert('success'," Data has been saved succesfuly !"));
 			if($this->input->post('apply'))
 			{
-				redirect( 'students/add/'.$ID,301);
+				redirect( 'available/add/'.$ID,301);
 			} else {
-				redirect( 'students',301);
+				redirect( 'available',301);
 			}			
 			
 			
@@ -181,7 +171,7 @@ class Students extends SB_Controller
 		$this->inputLogs("ID : ".implode(",",$this->input->post( 'id' , true ))."  , Has Been Removed Successfull");
 		$this->session->set_flashdata('message',
 			SiteHelpers::alert('success',"ID : ".implode(",",$this->input->post( 'id' , true ))."  , Has Been Removed Successfull"));
-		Redirect('students',301);
+		Redirect('available',301);
 	}
 
 
