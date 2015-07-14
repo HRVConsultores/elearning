@@ -20,55 +20,43 @@
 						<tbody>	
 					
 					<tr>
-						<td width='30%' class='label-view text-right'>Id</td>
-						<td><?php echo $row['id'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Estudiante</td>
+						<td><?php echo SiteHelpers::gridDisplayView($row['sc_Student_id'],'sc_Student_id','1:tb_users:id:first_name|last_name') ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Sc Student Id</td>
-						<td><?php echo $row['sc_Student_id'] ;?> </td>
+						<td width='30%' class='label-view text-right'>Curso</td>
+						<td><?php echo SiteHelpers::gridDisplayView($row['courseId'],'courseId','1:sc_course:id:code|name') ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>CourseId</td>
-						<td><?php echo $row['courseId'] ;?> </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>Finalscore</td>
+						<td width='30%' class='label-view text-right'>Nota final</td>
 						<td><?php echo $row['finalscore'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Comment</td>
+						<td width='30%' class='label-view text-right'>Comentario</td>
 						<td><?php echo $row['comment'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>EnrolmentStatus</td>
+						<td width='30%' class='label-view text-right'>Estado</td>
 						<td><?php echo $row['enrolmentStatus'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Valid</td>
-						<td><?php echo $row['valid'] ;?> </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>Created At</td>
+						<td width='30%' class='label-view text-right'>Creado</td>
 						<td><?php echo $row['created_at'] ;?> </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>Updated At</td>
+						<td width='30%' class='label-view text-right'>Actualizado</td>
 						<td><?php echo $row['updated_at'] ;?> </td>
 						
 					</tr>

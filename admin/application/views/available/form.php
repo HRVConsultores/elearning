@@ -29,74 +29,34 @@
 						<fieldset><legend> Available Courses</legend>
 									
 								  <div class="form-group  " >
-									<label for="Id" class=" control-label col-md-4 text-left"> Id </label>
+									<label for="Curso" class=" control-label col-md-4 text-left"> Curso <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <textarea name='id' rows='2' id='id' class='form-control '  
-				           ><?php echo $row['id'] ;?></textarea> <br />
+									  <select name='courseId' rows='5' id='courseId' code='{$courseId}' 
+							class='select2 '  required  ></select> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="Sc Student Id" class=" control-label col-md-4 text-left"> Sc Student Id </label>
+									<label for="Comentario" class=" control-label col-md-4 text-left"> Comentario </label>
 									<div class="col-md-8">
-									  <textarea name='sc_Student_id' rows='2' id='sc_Student_id' class='form-control '  
-				           ><?php echo $row['sc_Student_id'] ;?></textarea> <br />
+									  <textarea name='comment' rows='2' id='editor' class='form-control markItUp '  
+						 ><?php echo $row['comment'] ;?></textarea> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
 								  <div class="form-group  " >
-									<label for="CourseId" class=" control-label col-md-4 text-left"> CourseId </label>
+									<label for="Estado" class=" control-label col-md-4 text-left"> Estado <span class="asterix"> * </span></label>
 									<div class="col-md-8">
-									  <textarea name='courseId' rows='2' id='courseId' class='form-control '  
-				           ><?php echo $row['courseId'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Finalscore" class=" control-label col-md-4 text-left"> Finalscore </label>
-									<div class="col-md-8">
-									  <textarea name='finalscore' rows='2' id='finalscore' class='form-control '  
-				           ><?php echo $row['finalscore'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Comment" class=" control-label col-md-4 text-left"> Comment </label>
-									<div class="col-md-8">
-									  <textarea name='comment' rows='2' id='comment' class='form-control '  
-				           ><?php echo $row['comment'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="EnrolmentStatus" class=" control-label col-md-4 text-left"> EnrolmentStatus </label>
-									<div class="col-md-8">
-									  <textarea name='enrolmentStatus' rows='2' id='enrolmentStatus' class='form-control '  
-				           ><?php echo $row['enrolmentStatus'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Valid" class=" control-label col-md-4 text-left"> Valid </label>
-									<div class="col-md-8">
-									  <textarea name='valid' rows='2' id='valid' class='form-control '  
-				           ><?php echo $row['valid'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Created At" class=" control-label col-md-4 text-left"> Created At </label>
-									<div class="col-md-8">
-									  <textarea name='created_at' rows='2' id='created_at' class='form-control '  
-				           ><?php echo $row['created_at'] ;?></textarea> <br />
-									  <i> <small></small></i>
-									 </div> 
-								  </div> 					
-								  <div class="form-group  " >
-									<label for="Updated At" class=" control-label col-md-4 text-left"> Updated At </label>
-									<div class="col-md-8">
-									  <textarea name='updated_at' rows='2' id='updated_at' class='form-control '  
-				           ><?php echo $row['updated_at'] ;?></textarea> <br />
+									  
+					<?php $enrolmentStatus = explode(',',$row['enrolmentStatus']);
+					$enrolmentStatus_opt = array( 'Matriculado' => 'Matriculado' ,  'Desmatriculado' => 'Desmatriculado' , ); ?>
+					<select name='enrolmentStatus' rows='5' required  class='select2 '  > 
+						<?php 
+						foreach($enrolmentStatus_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['enrolmentStatus'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> </fieldset>
@@ -122,6 +82,9 @@
 			 
 <script type="text/javascript">
 $(document).ready(function() { 
- 	 
+
+		$("#courseId").jCombo("<?php echo site_url('available/comboselect?filter=sc_course:id:code|name') ?>",
+		{  selected_value : '<?php echo $row["courseId"] ?>' });
+		 	 
 });
 </script>		 

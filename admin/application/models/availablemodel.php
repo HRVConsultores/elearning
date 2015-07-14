@@ -14,11 +14,11 @@ class Availablemodel extends SB_Model
 	public static function querySelect(  ){
 		
 		
-		return "  SELECT DISTINCT pv_enrolment.* FROM pv_enrolment LEFT JOIN sc_course ON sc_course.id = pv_enrolment.courseId  ";
+		return "   SELECT pv_enrolment.* FROM pv_enrolment   ";
 	}
 	public static function queryWhere(  ){
 		
-		return " WHERE pv_enrolment.id IS NOT NULL AND sc_course.valid = 'Y'   ";
+		return "  WHERE pv_enrolment.id IS NOT NULL   ";
 	}
 	
 	public static function queryGroup(){

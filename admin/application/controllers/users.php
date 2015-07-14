@@ -127,8 +127,6 @@ class Users extends SB_Controller
 	
 	function save() {
 		
-		$query = $this->db->query("SELECT * FROM users;");
-		
 		$rules = $this->validateForm();
 
 		if($this->input->post('password') !='')

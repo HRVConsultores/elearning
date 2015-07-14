@@ -134,8 +134,7 @@ class Enrolment extends SB_Controller
 			$data = $this->validatePost();
 
 			$data['created_at'] = date('Y-m-d H:i:s');
-			$data['updated_at'] = date('Y-m-d H:i:s');
-			$data['valid'] = 'Y';
+			$data['updated_at'] = date('Y-m-d H:i:s');			
 
 			$ID = $this->model->insertRow($data , $this->input->get_post( 'id' , true ));
 			// Input logs

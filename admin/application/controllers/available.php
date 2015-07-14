@@ -128,10 +128,19 @@ class Available extends SB_Controller
 		
 		$rules = $this->validateForm();
 
+		$rules = array( 
+			array('field'=>'courseId','label'=>'Curso','rules'=>'callback_enrol_check')
+		);
+
 		$this->form_validation->set_rules( $rules );
 		if( $this->form_validation->run() )
 		{
 			$data = $this->validatePost();
+
+			$data['created_at'] = date('Y-m-d H:i:s');
+			$data['updated_at'] = date('Y-m-d H:i:s');
+			$data['sc_Student_id'] = $this->session->userdata('uid');
+
 			$ID = $this->model->insertRow($data , $this->input->get_post( 'id' , true ));
 			// Input logs
 			if( $this->input->get( 'id' , true ) =='')
@@ -174,5 +183,18 @@ class Available extends SB_Controller
 		Redirect('available',301);
 	}
 
+	public function enrol_check($course_id)
+	{
+		$query = $this->db->query("SELECT * FROM `pv_enrolment` WHERE `courseId` = '".$course_id."' AND `sc_Student_id` = '".$this->session->userdata('uid')."'");
 
+		if ($query->num_rows() > 0)		
+		{
+			$this->form_validation->set_message('enrol_check', 'Usted ya está matriculado en este %s');
+			return FALSE;
+		}
+		else
+		{
+			return TRUE;
+		}
+	}
 }
