@@ -12,7 +12,7 @@
 	<?php echo form_open('user/postlogin'); ?>
 	
 	<div class="form-group has-feedback">
-		<label> Email Address	</label>
+		<label> Email </label>
 		<input type="text" name="email" value="" class="form-control" placeholder="Email Address">
 		<i class="fa fa-envelope form-control-feedback"></i>
 	</div>
@@ -32,14 +32,14 @@
 	
 	<div class="form-group  has-feedback text-center" style=" margin-bottom:20px;" >
 		 	 
-			<button type="submit" class="btn btn-primary btn-sm btn-block" > Sign In</button>
+			<button type="submit" class="btn btn-primary btn-sm btn-block" > Entrar</button>
 		       
 
 		
 	 	<div class="clr"></div>
 		
 	</div>	
-	<p class="text-center"><a  id="or"  href="javascript://ajax"><small>Forgot password?</small></a></p>
+	<p class="text-center"><a  id="or"  href="javascript://ajax"><small>¿Olvidó su password?</small></a></p>
 	<!--p class="text-muted text-center">Do not have an account?</p>				
 		<a class="btn btn-default btn-white btn-white btn-block"  href="<?php //echo site_url('user/register');?>"> Create an account </a-->
 		
@@ -55,9 +55,9 @@
 			<?php endif; ?>
 		</div>
 		
-	  <!--p style="padding:10px 0" class="text-center">
-	  <a href="<?php //echo site_url();?>"> Back to Site </a>  
-   		</p-->			
+	  <p style="padding:10px 0" class="text-center">
+	  <a href="<?php echo site_url();?>"> Volver al Sitio </a>  
+   		</p>			
 	</div>		  
 	  
 	
@@ -68,13 +68,13 @@
  	
        <div class="form-group has-feedback">
 	   <div class="">
-			<label> Email Address </label>
+			<label> Email </label>
 		   <input type="text" name="credit_email" value="" class="form-control">
 			<i class="icon-envelope form-control-feedback"></i>
 		</div> 	
 		</div>
 		<div class="form-group has-feedback">        
-          <button type="submit" class="btn btn-danger ">Reset My Password  </button>        
+          <button type="submit" class="btn btn-danger ">Reiniciar Password  </button>        
       </div>
 	  
 	  <div class="clr"></div>
