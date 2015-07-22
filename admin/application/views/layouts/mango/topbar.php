@@ -83,11 +83,11 @@
 				<?php endif;?>
 			</li>
 		<?php endforeach;?>  
-			<li><a href="javascript://ajax" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"> My Account</span></a>
+			<li><a href="javascript://ajax" class="dropdown-toggle" data-toggle="dropdown"><span class="label label-success"> <?php echo $this->lang->line('core.m_myaccount'); ?></span></a>
 				 <ul class="dropdown-menu dropdown-menu-right">
 					 <?php if(!$this->session->userdata('logged_in')):?> 
-						<li><a href="<?php  echo site_url('user/login') ;?>"><i class="fa fa-sign-in"></i> Log In</a></li>
-						<li><a href="<?php  echo site_url('user/register')  ;?>"><i class="fa fa-user"></i> Registration</a></li>
+						<li><a href="<?php  echo site_url('user/login') ;?>"><i class="fa fa-sign-in"></i> <?php echo $this->lang->line('core.login'); ?></a></li>
+						<li><a href="<?php  echo site_url('user/register')  ;?>"><i class="fa fa-user"></i> <?php echo $this->lang->line('core.register'); ?></a></li>
 					 <?php else : ?>
 						<li><a href="<?php  echo site_url('user/profile')  ;?>"><i class="fa fa-user "></i> My Profile </a></li>					
 						<li><a href="<?php  echo site_url('dashboard')  ;?>"><i class="fa fa-desktop"></i> Dashboard</a></li>	

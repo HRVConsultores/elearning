@@ -56,7 +56,7 @@
 			<div class="col-md-8">
 			<input type="file" name="avatar">
 			<br />
-			 Image Dimension 80 x 80 px <br />
+			 <?php echo $this->lang->line('core.pge_imgdim'); ?> 80 x 80 px <br />
 			<?php echo SiteHelpers::showUploadedFile($info->avatar,'/uploads/users/') ?>
 			
 			 </div> 

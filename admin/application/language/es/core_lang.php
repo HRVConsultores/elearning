@@ -16,8 +16,8 @@
 	$lang["core.conewpassword"] = "Confirm Password";
 	$lang["core.notepassword"] = "Leave blank if you dont want to change current password ";	
 	$lang["core.submit"] = "Submit";
-	$lang["core.signin"] = "Sign In";
-	$lang["core.signup"] = "Sign Up";
+	$lang["core.signin"] = "Entrar";
+	$lang["core.signup"] = "Registrarse";
 	$lang["core.language"] = "Language";	
 	$lang["core.firstname"] = "Nombre";
 	$lang["core.lastname"] = "Apellido";
@@ -109,14 +109,14 @@
 	
 /* button */
 	$lang["core.btn_back"] = "Back";	
-	$lang["core.btn_action"] = "Action";	
+	$lang["core.btn_action"] = "Acciones";	
 	$lang["core.btn_search"] = "Search";	
 	$lang["core.btn_download"] = "Download";	
 	$lang["core.btn_config"] = "Configuration";	
 	$lang["core.btn_create"] = "Create";	
 	$lang["core.btn_remove"] = "Remove";
 	$lang["core.btn_edit"] = "Edit";	
-	$lang["core.btn_view"] = "View";
+	$lang["core.btn_view"] = "Ver";
 	$lang["core.btn_typesearch"] = "Type and Enter";		
   $lang["core.btn_apply"] = "Apply" ;
   $lang["core.btn_preview"] = "Preview" ;
@@ -175,9 +175,15 @@
 	$lang["core.lg_createaccount"] = "Create an Account";
 	$lang["core.lg_havenoaccount"] = "Do Not have an Account";
 	$lang["core.lg_backhome"] = "Back to Homepage";
+	$lang["core.lg_backlogin"] = "Volver al Login";
+	$lang["core.lg_backsite"] = "Volver al Sitio";
+
+	$lang["core.msg_act_email"] = "¡Gracias por registrarse! Por favor revise su correo y siga el link de activación.";
+	$lang["core.msg_act_validate"] = "¡Gracias por registrarse! Validaremos y activaremos su cuenta pronto.";
+	$lang["core.msg_act_now"] = "¡Gracias por registrarse! Su cuenta ya está activa.";	
 	
 	// button
-	$lang["core.btn_new"] = "New";
+	$lang["core.btn_new"] = "Nuev";
 	$lang["core.btn_savereturn"] = "Save & Return";
 	$lang["core.btn_add"] = "Add";
 	
@@ -209,6 +215,8 @@
 	$lang["core.pge_iallowguest"] = "Show for guest / unlogged";
 	$lang["core.pge_istatus"] = "Status";
 	$lang["core.pge_itemplate"] = "Template";
+
+	$lang["core.pge_imgdim"] = "Dimensiones de la imagen";
 	
 	
 	/** builder **/
@@ -345,7 +353,9 @@
 
 	$lang["core.mod_thaction"] = "Action";
 	
-	
+	$lang["core.login"] = "Entrar";
+	$lang["core.register"] = "Registrarse";	
+
 	// updated 1/7/15
 	$lang["core.fr_sociallogin"] = "Social Login";
 	$lang["core.fr_hybridauth"] = "Hybrid Auth";

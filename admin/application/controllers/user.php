@@ -254,12 +254,12 @@ class User extends SB_controller {
 				$headers .= 'From: '.CNF_APPNAME.' <'.CNF_EMAIL.'>' . "\r\n";
 					mail($to, $subject, $message, $headers);
 
-				$message = "Thanks for registering! . Please check your inbox and follow activation link";
+				$message = $this->lang->line('core.msg_act_email');
 
 			} elseif(CNF_ACTIVATION=='manual') {
-				$message = "Thanks for registering! . We will validate you account before your account active";
+				$message = $this->lang->line('core.msg_act_validate');
 			} else {
-				$message = "Thanks for registering! . Your account is active now ";
+				$message = $this->lang->line('core.msg_act_now');
 			}
 
 			$this->session->set_flashdata('message',SiteHelpers::alert('success',$message));

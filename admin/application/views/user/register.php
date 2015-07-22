@@ -15,43 +15,43 @@
 	<form class="form-signup" action="<?php echo site_url('user/create');?>" method="post">
 	
 	<div class="form-group has-feedback">
-		<label> First Name	<span class="asterix">*</span> </label>
-		<?php echo form_input(array('name'=>'firstname','placeholder'=>'First Name','required'=>'true','class'=>'form-control'));?>
+		<label> <?php echo $this->lang->line('core.firstname'); ?> <span class="asterix">*</span> </label>
+		<?php echo form_input(array('name'=>'firstname','placeholder'=> $this->lang->line('core.firstname'),'required'=>'true','class'=>'form-control'));?>
 		<i class="icon-users form-control-feedback"></i>
 	</div>
 	
 	<div class="form-group has-feedback">
-		<label> Last Name	 <span class="asterix">*</span></label><br />
-		<?php echo form_input(array('name'=>'lastname','placeholder'=>'Last Name','required'=>'true','class'=>'form-control'));?>
+		<label> <?php echo $this->lang->line('core.lastname'); ?> <span class="asterix">*</span></label><br />
+		<?php echo form_input(array('name'=>'lastname','placeholder'=> $this->lang->line('core.lastname'),'required'=>'true','class'=>'form-control'));?>
 		<i class="icon-users form-control-feedback"></i>
 	</div>
 	
 	<div class="form-group has-feedback">
-		<label> Email Address	 <span class="asterix">*</span></label>
-		<?php echo form_input(array('name'=>'email','placeholder'=>'Email Address','required'=>'true','class'=>'form-control'));?>
+		<label> <?php echo $this->lang->line('core.email'); ?> <span class="asterix">*</span></label>
+		<?php echo form_input(array('name'=>'email','placeholder'=> $this->lang->line('core.email'),'required'=>'true','class'=>'form-control'));?>
 		<i class="icon-envelop form-control-feedback"></i>
 	</div>
 	
 	<div class="form-group has-feedback">
-		<label> Password <span class="asterix">*</span></label>
-		<?php echo form_password(array('name'=>'password','placeholder'=>'Password','required'=>'true','class'=>'form-control'));?>
+		<label> <?php echo $this->lang->line('core.password'); ?> <span class="asterix">*</span></label>
+		<?php echo form_password(array('name'=>'password','placeholder'=> $this->lang->line('core.password'),'required'=>'true','class'=>'form-control'));?>
 		<i class="icon-lock form-control-feedback"></i>
 	</div>
 	
 	<div class="form-group has-feedback">
-		<label>Confirm Password <span class="asterix">*</span></label>
-		<?php echo form_password(array('name'=>'password_confirmation','placeholder'=>'Confirm Password','required'=>'true','class'=>'form-control'));?>
+		<label><?php echo $this->lang->line('core.repassword'); ?> <span class="asterix">*</span></label>
+		<?php echo form_password(array('name'=>'password_confirmation','placeholder'=> $this->lang->line('core.repassword'),'required'=>'true','class'=>'form-control'));?>
 		<i class="icon-lock form-control-feedback"></i>
 	</div>
 			
 
       <div class="row form-actions">
         <div class="col-sm-12">
-          <button type="submit" style="width:100%;" class="btn btn-primary pull-right"><i class="icon-user-plus"></i> Sign Up</button>
+          <button type="submit" style="width:100%;" class="btn btn-primary pull-right"><i class="icon-user-plus"></i> <?php echo $this->lang->line('core.signup'); ?></button>
        </div>
       </div>
 	  <p style="padding:10px 0" class="text-center">
-	  <a href="<?php echo site_url('user/login');?>"> Back to Login </a> | <a href="<?php echo site_url();?>"> Back to Site </a> 
+	  <a href="<?php echo site_url('user/login');?>"> <?php echo $this->lang->line('core.lg_backlogin'); ?> </a> | <a href="<?php echo site_url();?>"> <?php echo $this->lang->line('core.lg_backsite'); ?> </a> 
    		</p>
  </form>
  </div>

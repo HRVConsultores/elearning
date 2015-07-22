@@ -174,7 +174,13 @@
 	$lang["core.avatar"] = "Avatar";
 	$lang["core.lg_createaccount"] = "Create an Account";
 	$lang["core.lg_havenoaccount"] = "Do Not have an Account";
-	$lang["core.lg_backhome"] = "Back to Homepage";
+	$lang["core.lg_backhome"] = "Back to Homepage";	
+	$lang["core.lg_backlogin"] = "Back to Login";
+	$lang["core.lg_backsite"] = "Back to Site";
+
+	$lang["core.msg_act_email"] = "Thanks for registering! . Please check your inbox and follow activation link";
+	$lang["core.msg_act_validate"] = "Thanks for registering! . We will validate you account before your account active";
+	$lang["core.msg_act_now"] = "Thanks for registering! . Your account is active now";	
 	
 	// button
 	$lang["core.btn_new"] = "New";
@@ -210,6 +216,7 @@
 	$lang["core.pge_istatus"] = "Status";
 	$lang["core.pge_itemplate"] = "Template";
 	
+	$lang["core.pge_imgdim"] = "Image Dimension";
 	
 	/** builder **/
 	// config
@@ -344,7 +351,9 @@
 
 
 	$lang["core.mod_thaction"] = "Action";
-	
+
+	$lang["core.login"] = "Log In";	
+	$lang["core.register"] = "Registration";	
 	
 	// updated 1/7/15
 	$lang["core.fr_sociallogin"] = "Social Login";
