@@ -367,8 +367,13 @@
 	$lang["core.fr_multilang"] = "Multi Language";
 	
 	$lang["core.tab_security"] = "Security";
-	
-	
-	
-	
-	
+		
+	// Error
+	$lang["core.error_inv_cred"] = "Combinación de email o password inválida <br /> o su cuenta aún no ha sido activada.";
+	$lang["core.error_cant_find"] = "El correo no existe.";
+	$lang["core.error_profile"] = "Por favor revise el formulario!";
+
+	// Success
+	$lang["core.success_forgot"] = "Por favor revise su email. Le hemos enviado un link de reinicio.";
+	$lang["core.success_profile"] = "Su perfil ha sido actualizado correctamente.";
+	$lang["core.success_password"] = "Su password ha sido actualizado correctamente.";

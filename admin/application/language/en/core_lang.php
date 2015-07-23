@@ -367,7 +367,12 @@
 	
 	$lang["core.tab_security"] = "Security";
 	
-	
-	
-	
-	
+	// Error
+	$lang["core.error_inv_cred"] = "Invalid email or password combination <br /> or your account is not active yet";	
+	$lang["core.error_cant_find"] = "Can't find email address.";
+	$lang["core.error_profile"] = "Ops Something went wrong!";
+
+	// Success
+	$lang["core.success_forgot"] = "Please check your email and follow reset link";
+	$lang["core.success_profile"] = "Your Profile has been updated succesfuly";
+	$lang["core.success_password"] = "Your password has been changed succesfuly";

@@ -70,12 +70,12 @@ class User extends SB_controller {
 
 			$this->db->where('id' ,$this->session->userdata('uid'));
 			$this->db->update('tb_users',$data);
-			$this->session->set_flashdata('message',SiteHelpers::alert('success','Your Profile has been updated succesfuly'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('success',$this->lang->line('core.success_profile')));
 			redirect('user/profile',301);
 
 		} else {
 
-			$this->session->set_flashdata('message',SiteHelpers::alert('error','Ops Something went wrong !'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('error',$this->lang->line('core.error_profile')));
 			redirect('user/profile',301);
 		}
 
@@ -93,11 +93,11 @@ class User extends SB_controller {
 			$data = array('password'=>md5(trim($this->input->post('password'))));
 			$this->db->where('id' ,$this->session->userdata('uid'));
 			$this->db->update('tb_users',$data);
-			$this->session->set_flashdata('message',SiteHelpers::alert('success','Your password has been changed succesfuly'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('success',$this->lang->line('core.success_password')));
 			redirect('user/profile',301);
 
 		} else {
-			$this->session->set_flashdata('message',SiteHelpers::alert('error','Ops Something went wrong !'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('error',$this->lang->line('core.error_profile')));
 			redirect('user/profile',301);
 		}
 
@@ -158,7 +158,7 @@ class User extends SB_controller {
 			redirect('dashboard',301);
 
 		} else {
-			$this->session->set_flashdata('message',SiteHelpers::alert('error','Invalid email or password combination <br /> or your account is not active yet'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('error',$this->lang->line('core.error_inv_cred')));
 			redirect('user/login',301);
 		}
 
@@ -266,7 +266,7 @@ class User extends SB_controller {
 			redirect('user/login',301);
 		} else {
 			
-			$this->session->set_flashdata('message',SiteHelpers::alert('error','Ops Something Went Wrong'));
+			$this->session->set_flashdata('message',SiteHelpers::alert('error',$this->lang->line('core.error_profile')));
 			$this->session->set_userdata(array(
 				'_POST_DATA' => $_POST,
 			));
@@ -325,7 +325,7 @@ class User extends SB_controller {
 				$this->db->where('id',$user->id);
 				$this->db->update('tb_users',$data);
 
-				$this->session->set_flashdata('message',SiteHelpers::alert('success','Please check your email and follow reset link '));
+				$this->session->set_flashdata('message',SiteHelpers::alert('success',$this->lang->line('core.success_forgot')));
 				redirect('user/login',301);
 
 
