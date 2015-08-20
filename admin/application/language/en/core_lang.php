@@ -34,8 +34,11 @@
 	$lang["core.grid_sort"] = "Sort";
 	$lang["core.grid_order"] = "Order";	
 	$lang["core.grid_page"] = "Page";
-	$lang["core.grid_btnsubmit"] = "Go";
-		
+	$lang["core.grid_btnsubmit"] = "Go";	
+	$lang["core.first"] = "First";
+	$lang["core.previous"] = "Previous";
+	$lang["core.next"] = "Next";
+	$lang["core.last"] = "Last";		
 
 /* Menu navigation here */
 	$lang["core.m_controlpanel"] = "Panel";
@@ -368,11 +371,16 @@
 	$lang["core.tab_security"] = "Security";
 	
 	// Error
+	$lang["core.error_inv_capt"] = "Incorrect Captcha";	
 	$lang["core.error_inv_cred"] = "Invalid email or password combination <br /> or your account is not active yet";	
-	$lang["core.error_cant_find"] = "Can't find email address.";
+	$lang["core.error_cant_find_email"] = "Can't find email address.";
+	$lang["core.error_write_email"] = "Please write your email address.";
+	$lang["core.error_cant_find_code"] = "Can't find your reset code.";
 	$lang["core.error_profile"] = "Ops Something went wrong!";
+	$lang["core.error_inv_code"] = "Invalid Code Activation!";
 
 	// Success
 	$lang["core.success_forgot"] = "Please check your email and follow reset link";
 	$lang["core.success_profile"] = "Your Profile has been updated succesfuly";
 	$lang["core.success_password"] = "Your password has been changed succesfuly";
+	$lang["core.success_acc_act"] = "Your account is active now!";

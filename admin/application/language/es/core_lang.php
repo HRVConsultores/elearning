@@ -35,7 +35,10 @@
 	$lang["core.grid_order"] = "Orden";	
 	$lang["core.grid_page"] = "Página";
 	$lang["core.grid_btnsubmit"] = "Ir";
-		
+	$lang["core.first"] = "Primera";
+	$lang["core.previous"] = "Anterior";
+	$lang["core.next"] = "Siguiente";
+	$lang["core.last"] = "Última";		
 
 /* Menu navigation here */
 	$lang["core.m_controlpanel"] = "Panel";
@@ -104,21 +107,21 @@
 	$lang["core.sb_savechanges"] = "Guardar Cambios";
 	$lang["core.sb_send"] = "Send";
 	$lang["core.sb_save"] = "Save";
-	$lang["core.sb_submit"] = "Submit";
-	$lang["core.sb_cancel"] = "Cancel";	
+	$lang["core.sb_submit"] = "Guardar y Salir";
+	$lang["core.sb_cancel"] = "Cancelar";	
 	
 /* button */
 	$lang["core.btn_back"] = "Back";	
 	$lang["core.btn_action"] = "Acciones";	
 	$lang["core.btn_search"] = "Search";	
-	$lang["core.btn_download"] = "Download";	
-	$lang["core.btn_config"] = "Configuration";	
+	$lang["core.btn_download"] = "Descargar";	
+	$lang["core.btn_config"] = "Configurar";	
 	$lang["core.btn_create"] = "Create";	
-	$lang["core.btn_remove"] = "Remove";
-	$lang["core.btn_edit"] = "Edit";	
+	$lang["core.btn_remove"] = "Eliminar";
+	$lang["core.btn_edit"] = "Editar";	
 	$lang["core.btn_view"] = "Ver";
 	$lang["core.btn_typesearch"] = "Type and Enter";		
-  $lang["core.btn_apply"] = "Apply" ;
+  $lang["core.btn_apply"] = "Guardar" ;
   $lang["core.btn_preview"] = "Preview" ;
 	$lang["core.btn_new"] = "New";
 	
@@ -216,8 +219,7 @@
 	$lang["core.pge_istatus"] = "Status";
 	$lang["core.pge_itemplate"] = "Template";
 
-	$lang["core.pge_imgdim"] = "Dimensiones de la imagen";
-	
+	$lang["core.pge_imgdim"] = "Dimensiones de la imagen";	
 	
 	/** builder **/
 	// config
@@ -369,11 +371,16 @@
 	$lang["core.tab_security"] = "Security";
 		
 	// Error
+	$lang["core.error_inv_capt"] = "Captcha Incorrecto";	
 	$lang["core.error_inv_cred"] = "Combinación de email o password inválida <br /> o su cuenta aún no ha sido activada.";
-	$lang["core.error_cant_find"] = "El correo no existe.";
+	$lang["core.error_cant_find_email"] = "El correo no existe.";
+	$lang["core.error_write_email"] = "Por favor escriba su dirección de correo.";
+	$lang["core.error_cant_find_code"] = "El código de reinicio no existe.";
 	$lang["core.error_profile"] = "Por favor revise el formulario!";
+	$lang["core.error_inv_code"] = "Código de Activación Inválido!";
 
 	// Success
 	$lang["core.success_forgot"] = "Por favor revise su email. Le hemos enviado un link de reinicio.";
 	$lang["core.success_profile"] = "Su perfil ha sido actualizado correctamente.";
 	$lang["core.success_password"] = "Su password ha sido actualizado correctamente.";
+	$lang["core.success_acc_act"] = "Su cuenta está activada!";

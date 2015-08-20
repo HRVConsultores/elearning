@@ -69,9 +69,9 @@
 									<div class="col-md-8">
 									  
 					<label class='radio radio-inline'>
-					<input type='radio' name='active' value ='0' requred @if($row['active'] == '0') checked="checked" @endif ><?php echo $this->lang->line('core.fr_minactive'); ?> </label>
+					<input type='radio' name='active' value ='0' required @if($row['active'] == '0') checked="checked" @endif ><?php echo $this->lang->line('core.fr_minactive'); ?> </label>
 					<label class='radio radio-inline'>
-					<input type='radio' name='active' value ='1' requred @if($row['active'] == '1') checked="checked" @endif ><?php echo $this->lang->line('core.fr_mactive'); ?> </label> <br />
+					<input type='radio' name='active' value ='1' required @if($row['active'] == '1') checked="checked" @endif ><?php echo $this->lang->line('core.fr_mactive'); ?> </label> <br />
 									  <i> <small></small></i>
 									 </div> 
 								  </div> 					
